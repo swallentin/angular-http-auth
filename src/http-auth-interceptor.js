@@ -38,7 +38,7 @@
       }
  
       function error(response) {
-        if (response.status === 401 && !response.config.ignoreAuthModule) {
+        if ( (response.status === 401 || response.status === 401 ) && !response.config.ignoreAuthModule) {
           var deferred = $q.defer();
           httpBuffer.append(response.config, deferred);
           $rootScope.$broadcast('event:auth-loginRequired');
